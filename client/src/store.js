@@ -8,7 +8,7 @@ const store = new Vuex.Store({
   state: {
     isLogin: false,
     isAdmin: false,
-    baseUrl: `e-commerce-server-1.madearyadi.club`,
+    baseUrl: `http://e-commerce-1.madearyadi.club`,
     products: [],
     carts: [],
     selectedProduct: {},

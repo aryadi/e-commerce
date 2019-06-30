@@ -30,6 +30,35 @@ class Cart {
       });
   }
 
+  static update(req, res, next) {
+    let objproduct = {};
+
+    // console.log(req.file.gcsUrl);
+    
+
+    if (req.body.userId) {
+      objproduct['userId'] = req.body.userId;
+    }
+
+    if (req.body.productId) {
+      objproduct['productId'] = req.body.productId;
+    }
+
+    if (req.body.quantity) {
+      objproduct['quantity'] = req.body.quantity;
+    }
+
+    Model.Cart.updateOne({
+        _id: req.params.cartId
+      }, objproduct)
+      .then((response) => {
+        res.status(201).json(response);
+      })
+      .catch((err) => {
+        next(err);
+      })
+  }
+
   static delete(req, res, next) {
     Model.Cart.deleteOne({
         _id: req.params.cartId

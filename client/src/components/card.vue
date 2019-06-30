@@ -1,5 +1,5 @@
 <template>
-  <v-card height="500">
+  <v-card height="700">
     <v-img v-bind:src="product.image" height="60%" aspect-ration="1"></v-img>
 
     <v-card-title primary-title>
